@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Counter</title>
+</head>
+
+<body>
+
+    <div class="counter">
+        <div class="count" id="count"></div>
+        <button class="btn-decrease" onclick="decrementHandle()">Decrease</button>
+        <button class="btn-reset" onclick="resetHandle()">Reset</button>
+        <button class="btn-increase" onclick="incrementHandle()">Increase</button>
+    </div>
+
+
+    <script>
+        let count = 0;
+        let incrementCount = document.getElementById("count");
+        incrementCount.innerHTML = count;
+
+        const decrementHandle = () => {
+            count--
+            incrementCount.innerHTML = count;
+            if (count < 0) {
+                document.getElementById("count").style.color = "red"
+            } else if (count === 0) {
+                document.getElementById("count").style.color = "black"
+            } else if (count > 0) {
+                document.getElementById("count").style.color = "green"
+            }
+        }
+
+        const incrementHandle = () => {
+            count++
+            console.log(count);
+            incrementCount.innerHTML = count;
+            if (count < 0) {
+                document.getElementById("count").style.color = "red"
+            } else if (count === 0) {
+                document.getElementById("count").style.color = "black"
+            } else if (count > 0) {
+                document.getElementById("count").style.color = "green"
+            }
+        }
+
+
+        const resetHandle = () => {
+            count = 0;
+            incrementCount.innerHTML = count;
+            if (count < 0) {
+                document.getElementById("count").style.color = "red"
+            } else if (count === 0) {
+                document.getElementById("count").style.color = "black"
+            } else if (count > 0) {
+                document.getElementById("count").style.color = "green"
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
